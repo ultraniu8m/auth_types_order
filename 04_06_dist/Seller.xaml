@@ -10,21 +10,32 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="267*"></ColumnDefinition>
-            <ColumnDefinition Width="300*"></ColumnDefinition>
-            <ColumnDefinition Width="233*"></ColumnDefinition>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="56*"></RowDefinition>
-            <RowDefinition Height="275*"></RowDefinition>
-            <RowDefinition Height="56*"></RowDefinition>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="new_order" HorizontalAlignment="Left" Height="23" Margin="84,64,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Grid.Row="1" />
-        <TextBox x:Name="new_client" HorizontalAlignment="Left" Height="23" Margin="10,64,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Grid.Row="1" Grid.Column="1"/>
-        <TextBox x:Name="new_service" HorizontalAlignment="Left" Height="23" Margin="147,64,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.Row="1"/>
-        <Button Content="добавить" HorizontalAlignment="Left" Margin="23,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="20" Click="Button_Click"/>
-        <Label Content="Номер заказа" HorizontalAlignment="Left" Margin="118,38,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="86"/>
-        <Label Content="Клиент" HorizontalAlignment="Left" Margin="23,38,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="48"/>
-        <Label Content="Услуга" HorizontalAlignment="Left" Margin="158,38,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="45"/>
+        <TextBox x:Name="new_order" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Margin="147,3,0,0" Text="{Binding ID}"/>
+        <TextBox x:Name="new_client" HorizontalAlignment="Left" Height="23" Margin="147,36,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Date_of_creation}"/>
+        <TextBox x:Name="new_service" HorizontalAlignment="Left" Height="23" Margin="147,70,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text ="{Binding Time_of_order}" />
+        <Button Content="сформировать заказ" Margin="290,255,0,0" Click="Button_add_order"  HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="117" Background="#FF498C51"/>
+        <Label Content="КОД заказа" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="83"/>
+        <Label Content="Время заказа" HorizontalAlignment="Left" Margin="0,70,0,0" VerticalAlignment="Top" Height="26" Width="48"/>
+        <Label Content="Клиент" HorizontalAlignment="Left" Margin="0,104,0,0" VerticalAlignment="Top" Height="26" Width="48"/>
+        <Label Content="Дата создания" HorizontalAlignment="Left" Margin="-3,36,0,0" VerticalAlignment="Top" Height="26" Width="89"/>
+        
+        <TextBox x:Name="new_service_Copy1" HorizontalAlignment="Left" Height="23" Margin="147,141,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Status}"/>
+        <Label Content="Дата закрытия" HorizontalAlignment="Left" Margin="-3,172,0,0" VerticalAlignment="Top" Height="26" Width="89"/>
+        <Label Content="Статус заказа" HorizontalAlignment="Left" Margin="-3,141,0,0" VerticalAlignment="Top" Height="26" Width="86" RenderTransformOrigin="0.554,0.038"/>
+        <TextBox x:Name="new_service_Copy2" HorizontalAlignment="Left" Height="23" Margin="147,175,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Date_of_close}"/>
+        <Label Content="Время аренды" HorizontalAlignment="Left" Margin="-3,216,0,0" VerticalAlignment="Top" Height="26" Width="89"/>
+        <TextBox x:Name="new_service_Copy3" HorizontalAlignment="Left" Height="23" Margin="147,216,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Time_of_rental}"/>
+        <Label Content="Код сотрудника" HorizontalAlignment="Left" Margin="-3,252,0,0" VerticalAlignment="Top" Height="26" Width="89"/>
+        <TextBox x:Name="new_service_Copy4" HorizontalAlignment="Left" Height="23" Margin="147,252,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Employee_id}"/>
+        <Image HorizontalAlignment="Left" Height="211" Margin="584,0,0,0" VerticalAlignment="Top" Width="216"/>
+        <Label Content="ФИО" HorizontalAlignment="Left" Margin="376,44,0,0" VerticalAlignment="Top" Height="41" Width="208"/>
+        <Label Content="ОСТАЛОСЬ:" HorizontalAlignment="Left" Margin="376,0,0,0" VerticalAlignment="Top" Height="41" Width="208"/>
+        <Button x:Name="Buttonback" Content="Назад" HorizontalAlignment="Left" Margin="376,81,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.2,0.75" Click="Buttonback_Click"/>
+        <TextBox x:Name="new_service_Copy" HorizontalAlignment="Left" Height="23" Margin="147,104,0,0"   VerticalAlignment="Top" Width="120" Text="{Binding Code_client}" IsReadOnly= "True"/>
     </Grid>
 </Page>

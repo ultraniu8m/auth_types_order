@@ -9,6 +9,25 @@
       Title="Admin">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Content="История входа" Margin="326,271,0,0" Click="Button_Click"  HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="186" Background="#FF498C51" RenderTransformOrigin="-1.677,2.745"/>
+        <Image HorizontalAlignment="Left" Height="211" Margin="584,0,0,0" VerticalAlignment="Top" Width="216"/>
+        <Label Content="ФИО" HorizontalAlignment="Left" Margin="376,44,0,0" VerticalAlignment="Top" Height="41" Width="208"/>
+        <Label Content="ОСТАЛОСЬ:" HorizontalAlignment="Left" Margin="376,0,0,0" VerticalAlignment="Top" Height="41" Width="208"/>
+        <Button x:Name="Buttonback" Content="Назад" HorizontalAlignment="Left" Margin="376,81,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.2,0.75" Click="Buttonback_Click"/>
+        <DataGrid HorizontalAlignment="Left" Height="291" VerticalAlignment="Top" Width="326" RenderTransformOrigin="0.553,-0.22">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Входа"></DataGridTextColumn>
+                <DataGridTextColumn Header="ID Сотрудника"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата и время"></DataGridTextColumn>
+                <DataGridTextColumn Header="Тип и входа"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="сформировать отчет о входе" Margin="331,125,0,0" Click="Button_Click"  HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="186" Background="#FF498C51" RenderTransformOrigin="-1.677,2.745"/>
     </Grid>
 </Page>

@@ -24,5 +24,13 @@ namespace _04_06_dist
         {
             InitializeComponent();
         }
+        private void Buttonback_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new auth());
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new auth());
+        }
     }
 }

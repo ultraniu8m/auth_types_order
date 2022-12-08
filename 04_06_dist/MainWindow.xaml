@@ -5,22 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_04_06_dist"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" MinWidth="750" MinHeight="380">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="56*"></RowDefinition>
             <RowDefinition Height="275*"></RowDefinition>
             <RowDefinition Height="56*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Rectangle Fill="#FF498C51" HorizontalAlignment ="Stretch"  Stroke="Black" VerticalAlignment="Stretch"  Grid.ColumnSpan="3"/>
-        <Rectangle Fill="#FF76E383" HorizontalAlignment="Stretch"  Stroke="Black" VerticalAlignment="Stretch"  Grid.ColumnSpan="3"  Grid.Row="2"/>
-        <Image HorizontalAlignment="Left"   VerticalAlignment="Stretch" Width="82" Source="logo.png"/>
-        <Frame x:Name="main_frame"  HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch"  Grid.ColumnSpan="3" NavigationUIVisibility="Hidden"/>
+        <Rectangle Fill="#FF498C51" HorizontalAlignment ="Stretch"  Stroke="Black" VerticalAlignment="Stretch"/>
+        <Rectangle Fill="#FF76E383" HorizontalAlignment="Stretch"  Stroke="Black" VerticalAlignment="Stretch"  Grid.Row="2" MinWidth="600" MinHeight="350"/>
+        <Frame x:Name="main_frame"  HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" NavigationUIVisibility="Hidden"/>
+        <Image HorizontalAlignment="Left"  VerticalAlignment="Top"  Source="logo.png"/>
 
 
 

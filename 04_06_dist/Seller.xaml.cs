@@ -19,6 +19,8 @@ using BarcodeLib;
 using iTextSharp;
 using GroupDocs.Signature;
 using GroupDocs.Signature.Options;
+using _04_06_dist;
+
 namespace _04_06_dist
 {
     /// <summary>
@@ -26,37 +28,41 @@ namespace _04_06_dist
     /// </summary>
     public partial class Seller : Page
     {
+        private Order _currentorder = new Order();
         public Seller()
         {
             InitializeComponent();
+            DataContext = _currentorder;
+
+            
+      
+            
+            
+
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        
+        private void Button_add_order(object sender, RoutedEventArgs e)
         {
-            // данные которые нужно добавить в бд
-            string actual_id = new_order.Text;
-            string actual_client = new_client.Text;
-            string actual_service = new_service.Text;
-
-            /* Создание штрих-кода
-            using (Signature signature = new Signature("path/document.pdf"))
+            StringBuilder ERRORS = new StringBuilder();
+            if (_currentorder.ID is string)
+                ERRORS.AppendLine("ID - номер ");
+            if (_currentorder.ID < 10000000)
+                ERRORS.AppendLine("id клиента - 6 значный номер");
+            if (ERRORS == null)
             {
-                // Создайте параметры штрих-кода с текстом штрих-кода
-                BarcodeSignOptions options = new BarcodeSignOptions("Signed by GroupDocs using GroupDocs.Signature.")
-                {
-                    // Установите тип кодировки штрих-кода
-                    EncodeType = BarcodeTypes.Code128,
-
-                    // Установить положение подписи
-                    Left = 205,
-                    Top = 170,
-                    Width = 200,
-                    Height = 50
-                };
-                // Примените штрих-код к документу для подписи.
-                SignResult result = signature.Sign("path/document-with-barcode.pdf", options);
+                predelbrusye_entities.Getcontext().Order.Add(_currentorder);
+                predelbrusye_entities.Getcontext().SaveChanges();
             }
-            */
+            else
+            {
+                MessageBox.Show(Convert.ToString(ERRORS));
+            }
+           
+        }
+        private void Buttonback_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new auth());
         }
     }
 }
